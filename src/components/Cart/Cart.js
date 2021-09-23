@@ -33,9 +33,9 @@ const Cart = (props) => {
                                         <p>${tax.toFixed(2)}</p>
                                 </div>
                         </div>
-                        <div className="flex">
+                        <div className="flex coral">
                                 <h4>Total: </h4>
-                                <h4>{finalTotal.toFixed(2)}</h4>
+                                <h4>${finalTotal.toFixed(2)}</h4>
                         </div>
                 </div>
         );

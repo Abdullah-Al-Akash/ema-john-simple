@@ -34,7 +34,7 @@ const Shop = () => {
                         </div>
                         {/* Cart */}
                         <div className="cart-container">
-                                <div style={{ textAlign: 'center' }}>
+                                <div style={{ textAlign: 'center', marginTop: '20px' }}>
                                         <h2>Order Summary</h2>
                                         <h4>Items Ordered: {cart.length} </h4>
                                         <Cart cart={cart}></Cart>
