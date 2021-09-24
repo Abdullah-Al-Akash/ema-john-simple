@@ -8,12 +8,12 @@ const Cart = (props) => {
         // Calculate Total Price:
         let total = 0;
         for (const product of cart) {
-                total = total + product.price;
+                total = total + product.price * (product.quantity ? product.quantity : 1);
         }
         // Shipping Cost:
         let shippingCost = 0;
         for (const product of cart) {
-                shippingCost = shippingCost + product.shipping;
+                shippingCost = shippingCost + product.shipping * (product.quantity ? product.quantity : 1);
         }
         // Tax Calculate:
         const tax = total * .1;
