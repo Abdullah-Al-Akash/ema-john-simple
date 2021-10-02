@@ -39,7 +39,7 @@ const Cart = (props) => {
                                 <h4>Total: </h4>
                                 <h4>${finalTotal.toFixed(2)}</h4>
                         </div>
-                        <button className="addCartBtn"><FontAwesomeIcon icon={faCartPlus} /> Review Order</button>
+                        {props.children}
                 </div>
         );
 };

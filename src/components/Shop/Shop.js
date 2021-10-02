@@ -3,6 +3,9 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import { addToDb, getStoredCart } from '../../utilities/fakedb'
 import './Shop.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
         // UseState For Set Loaded Data:
@@ -82,7 +85,11 @@ const Shop = () => {
                                         <div style={{ textAlign: 'center', marginTop: '20px' }}>
                                                 <h2>Order Summary</h2>
                                                 <h4>Items Ordered: {totalQuantity} </h4>
-                                                <Cart cart={cart}></Cart>
+                                                <Cart cart={cart}>
+                                                        <Link to="/orders">
+                                                                <button className="addCartBtn"><FontAwesomeIcon icon={faCartPlus} /> Review Order</button>
+                                                        </Link>
+                                                </Cart>
                                         </div>
                                 </div>
                         </div>
