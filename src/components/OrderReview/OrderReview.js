@@ -2,7 +2,7 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { removeFromDb } from '../../utilities/fakedb';
+import { clearTheCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import useCart from '../hooks/useCart';
 import useProducts from '../hooks/useProducts';
@@ -12,6 +12,7 @@ const OrderReview = () => {
         const [products] = useProducts();
         const [cart, setCart] = useCart(products);
         const history = useHistory();
+
         // Handle Remove Item:
         const handleRemove = key => {
                 const newCart = cart.filter(product => product.key !== key);
@@ -21,6 +22,8 @@ const OrderReview = () => {
         // Place Order:
         const placeOrder = () => {
                 history.push('/placeorder');
+                setCart([]);
+                clearTheCart();
         }
         return (
                 <div className="shop-container">
