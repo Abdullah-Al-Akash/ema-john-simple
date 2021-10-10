@@ -1,8 +1,11 @@
 import React from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import useAuth from '../../context/useAuth';
 
 const Login = () => {
+        const { signInWithGoogle, user } = useAuth();
+        const location = useLocation();
         return (
                 <div className="login-form">
                         <div>
@@ -17,7 +20,7 @@ const Login = () => {
                                 </form>
                                 <p>New to Ema John? <Link to="/register">Create Account</Link></p>
                                 <div>------------------Or----------------</div>
-                                <button className="addCartBtn">Sign In With Google</button>
+                                <button onClick={signInWithGoogle} className="addCartBtn">Sign In With Google</button>
                         </div>
                 </div>
         );
